@@ -28,7 +28,8 @@ namespace CreadorQR
 
         private int idx_local = 0;
         List<idProduct> GLOBAL_IDENTITIES = new List<idProduct>();
-
+        
+        // Lista de categorias de productos del local
         List<string> TIPOS_DE_PRODUCTOS = new List<string> { "botineros", "cocina", "comoda", "escritorios", "mesa de luz", "mesa ratona",
                                                              "mesas", "multiespacios", "organizadores", "placares", "rack panel tv",
                                                              "sillas" };
