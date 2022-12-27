@@ -40,8 +40,8 @@ namespace CreadorQR
 
         IFirebaseConfig ifc = new FirebaseConfig()
         {
-            AuthSecret = "moo3bB6fT6d3sUhQhDRNBnUJx6loQ4tscx6FS6rf",
-            BasePath = "https://articogar-database-default-rtdb.firebaseio.com/"
+            AuthSecret = "myAuthSecret :)",
+            BasePath = "myBasePath"
         };
 
         IFirebaseClient client;
