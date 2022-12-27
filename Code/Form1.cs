@@ -59,7 +59,6 @@ namespace CreadorQR
             // Crear QR y cargar al stock
             if (cb_producto.SelectedIndex != -1 && cb_prod.SelectedIndex != -1)
             {
-
                 int espacio_necesario = 1;
 
                 string cantidad = tb_cantidad.Text;
@@ -141,25 +140,18 @@ namespace CreadorQR
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
             QRCode qrCode = generarQr("enunlugardelamanchad");
             pictureBoxQRCode.BackgroundImage = qrCode.GetGraphic(6);
-            try
-            {
-                client = new FirebaseClient(ifc);
-            }
-            catch
-            {
-                MessageBox.Show("Problemas de conexion a internet!", "Error");
-            }
+            try { client = new FirebaseClient(ifc); }
+            catch { MessageBox.Show("Problemas de conexion a internet!", "Error"); }
+            
             try
             {
                 PdfWriter.GetInstance(doc, new FileStream("temp_print.pdf", FileMode.Create));
                 doc.Open();
             }
-            catch {
-            
-            }
+            catch { }
+           
             qrX = 0; qrY = pdfSize() * 140;
             panel1.Visible = true;
             trackBar1.Value = 48;
@@ -192,10 +184,7 @@ namespace CreadorQR
         {
             // vaciar
             listBox1.Items.Clear();
-            try
-            {
-                restartDocument();
-            }
+            try { restartDocument(); }
             catch { }
             nprod.Text = "Te quedan " + (itemsInPdf - listBox1.Items.Count).ToString() + " productos por agregar";
             panel1.Visible = true;
@@ -248,7 +237,7 @@ namespace CreadorQR
 
         private void cb_producto_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // llenar productis cb
+            // Llenar productos cb
             cb_prod.Items.Clear();
 
             string tipo = cb_producto.SelectedItem.ToString();
